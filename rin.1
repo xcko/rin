@@ -1,0 +1,29 @@
+.TH RIN 1 rin-VERSION
+.SH NAME
+rin \- raw input/output tcp connection
+.SH SYNOPSIS
+.B rin
+.RB [ \-h ]
+.RB [ \-d
+.IR dir ]
+.RB [ host ]
+.RB [ port ]
+.SH DESCRIPTION
+.B rin
+a simple filesystem based tcp socket. It creates a rin directory tree
+with a server directory within which an input FIFO and output file
+are established for an interactive connection. Useful for debugging
+protocols and sessions.
+.SH OPTIONS
+.TP
+.B \-h
+Prints usage information to stderr, then exits
+.TP
+.BI \-d " dir"
+Overrides the default dir prefix ($HOME/rin)
+.TP
+.BI "host"
+Server to connect with.
+.TP
+.BI "port"
+Specific port to connect.
