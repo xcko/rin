@@ -1,0 +1,43 @@
+Abstract
+--------
+rin is a minimalistic FIFO and filesystem based tcp client. It
+creates a directory tree with a FIFO in file and plain out file.
+
+The in file is used to communicate with the host at the specified
+port and the out file contains the server messages. For every new
+host, new in and out files are created. 
+
+The basic idea of this is to be able to communicate with a server
+over tcp with standard command line tools. For example, say you
+want to write an irc client and need to debug the sasl authentication
+protocol. Connect rin to the specified host and write CON ACK :sasl
+to the in file, you can now continue the interaction to determine
+precisely what is needed and whether a server implements any
+nonstandard features.
+
+Installation
+------------
+Edit config.mk to match your local setup. rin is installed into
+/usr/local by default.
+
+Afterwards enter the following command to build and install rin (if
+necessary as root):
+
+    $ make clean install
+
+Running rin
+------------
+Simply invoke the 'rin' command with required arguments.
+
+The -d flag is used to specifiy a different root for the directory tree, which is $HOME/rin by default.
+
+Configuration
+-------------
+Edit the source and recompile if configuration is needed. 
+
+Contact
+-------
+If you want to contact the developer, just write to 
+eGNrb0BiaXRtZXNzYWdlLmNo
+
+- xcko
